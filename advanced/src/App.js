@@ -2,6 +2,7 @@ import "./App.css";
 
 //Img
 import Rio from './assets/rio.jpg' 
+import ManageData from "./components/ManageData";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         {/* Porém,  normalmente fica na pasta assets dentro de src. Tem que importar la em cima */}
         <img src={Rio} alt="" />
       </div>
+      <ManageData />
     </div>
   );
 }
