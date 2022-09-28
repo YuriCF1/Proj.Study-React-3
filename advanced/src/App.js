@@ -2,6 +2,7 @@ import "./App.css";
 
 //Img
 import Rio from './assets/rio.jpg' 
+import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <img src={Rio} alt="" />
       </div>
       <ManageData />
+      <ListRender />
     </div>
   );
 }

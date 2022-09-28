@@ -3,8 +3,11 @@ import React, { useState } from "react";
 const ManageData = () => {
   let someData = 10;
 
-  const [number, setNumber] = useState(10);
-console.log(number);
+  const [number, setNumber] = useState(someData);
+  
+  // setNumber = (a) => {
+  //   return someData + a;
+  // }
   return (
     <div>
       <p>Valor: {someData}</p>
@@ -13,6 +16,6 @@ console.log(number);
       <button onClick={() => setNumber(5)}>Somando</button>
     </div>
   );
-};
+}; 
 
 export default ManageData;
