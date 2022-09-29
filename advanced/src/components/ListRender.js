@@ -12,12 +12,12 @@ const ListRender = () => {
   ]);
 
   const deleteRandom = () => {
-    const randomNumber = Math.floor(Math.random() * 4) //Número de itens da lista
-    setUsers((prevUsers) => { //prevSate é o estado atual, após o método, vira o estado anterior
-      return prevUsers.filter((user) => randomNumber !== user.id)
-    })
-
-  }
+    const randomNumber = Math.floor(Math.random() * 4); //Número de itens da lista
+    setUsers((prevUsers) => {
+      //prevSate é o estado atual, após o método, vira o estado anterior
+      return prevUsers.filter((user) => randomNumber !== user.id);
+    });
+  };
 
   return (
     <div>
