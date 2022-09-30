@@ -1,12 +1,16 @@
+import { useState } from "react";
 import "./App.css";
 
 //Img
-import Rio from './assets/rio.jpg' 
+import Rio from "./assets/rio.jpg";
 import ConditionalRender from "./components/ConditionalRender";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
+import ShowUserName from "./components/ShowUserName";
 
 function App() {
+  const name = "Yago";
+  const [userName] = useState("Ygor")
   return (
     <div className="App">
       <h1>Avançando</h1>
@@ -21,6 +25,8 @@ function App() {
       <ManageData />
       <ListRender />
       <ConditionalRender />
+      {/* Passando dados do element pai para o filho */}
+      <ShowUserName name={userName} />
     </div>
   );
 }
