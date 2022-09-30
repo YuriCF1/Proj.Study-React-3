@@ -31,7 +31,10 @@ function App() {
       <ShowUserName name={userName} />
       {/* Destructuring */}
       {/* Número sem ser texto, usa chaves */}
-      <CarDetail brand="Ford" km={1000} color="Azul"/>
+      <CarDetail brand="Ford" km={1000} color="Azul" new={false}/>
+      {/* Reaproveitando */}
+      <CarDetail brand="Audi" km={500} color="Branco" new={false}/>
+      <CarDetail color="Roxo" km={700} brand="Fiat" newCar={true}/>
     </div>
   );
 }
