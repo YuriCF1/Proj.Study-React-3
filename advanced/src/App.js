@@ -5,12 +5,13 @@ import "./App.css";
 import Rio from "./assets/rio.jpg";
 import CarDetail from "./components/CarDetail";
 import ConditionalRender from "./components/ConditionalRender";
+import Fragments from "./components/Fragments";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 
 function App() {
-  const name = "Yago";
+  // const name = "Yago";
   const [userName] = useState("Ygor ");
 
   const cars = [
@@ -63,8 +64,10 @@ function App() {
       {/* Lembrando que objeto se passa com parenteses */}
       {/* Os loops são feitos com .map */}
       {cars.map((car) => (
-        <CarDetail brand={car.brand} color={car.color} newCar={car.newCar}/>
+        <CarDetail brand={car.brand} color={car.color} newCar={car.newCar} />
       ))}
+      {/* Fragments */}
+      <Fragments propFragment="Teste"/>
     </div>
   );
 }
