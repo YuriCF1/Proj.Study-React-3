@@ -5,6 +5,7 @@ import "./App.css";
 import Rio from "./assets/rio.jpg";
 import CarDetail from "./components/CarDetail";
 import ConditionalRender from "./components/ConditionalRender";
+import Container from "./components/Container";
 import Fragments from "./components/Fragments";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
@@ -67,7 +68,14 @@ function App() {
         <CarDetail brand={car.brand} color={car.color} newCar={car.newCar} />
       ))}
       {/* Fragments */}
-      <Fragments propFragment="Teste"/>
+      <Fragments propFragment="Teste" />
+      {/* Children props */}
+      <Container testValue="Testing">
+          <p>Testando children</p>
+      </Container>
+      <Container testValue="Testing again">
+          <p>Testando container de novo</p>
+      </Container>
     </div>
   );
 }
