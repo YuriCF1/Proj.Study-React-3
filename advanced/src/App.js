@@ -13,6 +13,7 @@ import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import Message from "./components/Message";
 import ShowUserName from "./components/ShowUserName";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   // const name = "Yago";
@@ -54,18 +55,21 @@ function App() {
 
   // Exercício__________________________________________________________________
   const drivers = [{
+    id: 1,
     name: "Carlos", 
     age: 15,
-
-  },
-   {
-    name: "Maria", 
-    age: 25,
-
+    
   },
   {
-    name: "Vanessa", 
-    age: 18,
+     id: 2,
+     name: "Maria", 
+     age: 25,
+     
+    },
+    {
+      id: 3,
+      name: "Vanessa", 
+      age: 18,
 
   },
 ]
@@ -115,6 +119,14 @@ function App() {
       <Message msg={message} /> 
       {/* //Altera, atualiza e reconsome o estado. 4º */}
       <ChangeMessageState changeFunction={handleMessage} />
+      {/* Exercício */}
+      {cars.map((car) => (
+        <CarDetail key={car.id} brand={car.brand} color={car.color} newCar={car.newCar} />
+      ))}
+      
+      {drivers.map((person) =>(
+        <UserDetails  key={person.id} name={person.name} age={person.age}/>
+      ))}
     </div>
   );
 }
