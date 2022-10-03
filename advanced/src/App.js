@@ -6,6 +6,7 @@ import Rio from "./assets/rio.jpg";
 import CarDetail from "./components/CarDetail";
 import ConditionalRender from "./components/ConditionalRender";
 import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
 import Fragments from "./components/Fragments";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
@@ -38,6 +39,12 @@ function App() {
       newCar: true,
     },
   ];
+
+  function showMessage() {
+    console.log("Evento do componente pai");
+
+  }
+
   return (
     <div className="App">
       <h1>Avançando</h1>
@@ -65,7 +72,7 @@ function App() {
       {/* Lembrando que objeto se passa com parenteses */}
       {/* Os loops são feitos com .map */}
       {cars.map((car) => (
-        <CarDetail brand={car.brand} color={car.color} newCar={car.newCar} />
+        <CarDetail key={car.id} brand={car.brand} color={car.color} newCar={car.newCar} />
       ))}
       {/* Fragments */}
       <Fragments propFragment="Teste" />
@@ -76,6 +83,8 @@ function App() {
       <Container testValue="Testing again">
           <p>Testando container de novo</p>
       </Container>
+      {/* Executar função */}
+      <ExecuteFunction myFunction={showMessage}/>
     </div>
   );
 }
