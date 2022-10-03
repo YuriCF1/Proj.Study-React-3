@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import "./App.css";
 
 //Img
 import Rio from "./assets/rio.jpg";
 import CarDetail from "./components/CarDetail";
+import ChangeMessageState from "./components/ChangeMessageState";
 import ConditionalRender from "./components/ConditionalRender";
 import Container from "./components/Container";
 import ExecuteFunction from "./components/ExecuteFunction";
 import Fragments from "./components/Fragments";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
+import Message from "./components/Message";
 import ShowUserName from "./components/ShowUserName";
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
       newCar: true,
     },
     {
-      id: 1,
+      id: 3,
       brand: "Dodge",
       color: "Preta",
       KM: 250,
@@ -44,6 +46,29 @@ function App() {
     console.log("Evento do componente pai");
 
   }
+
+  const [message, setMessage] = useState(""); //Gerenciamento de estado. 1º
+  const handleMessage = (msg) => { //Alterando o estado. 2º
+    setMessage(msg);
+  }
+
+  // Exercício__________________________________________________________________
+  const drivers = [{
+    name: "Carlos", 
+    age: 15,
+
+  },
+   {
+    name: "Maria", 
+    age: 25,
+
+  },
+  {
+    name: "Vanessa", 
+    age: 18,
+
+  },
+]
 
   return (
     <div className="App">
@@ -85,6 +110,11 @@ function App() {
       </Container>
       {/* Executar função */}
       <ExecuteFunction myFunction={showMessage}/>
+      {/* State Lift */}
+      {/* //Consome o estado. 3º */}
+      <Message msg={message} /> 
+      {/* //Altera, atualiza e reconsome o estado. 4º */}
+      <ChangeMessageState changeFunction={handleMessage} />
     </div>
   );
 }
